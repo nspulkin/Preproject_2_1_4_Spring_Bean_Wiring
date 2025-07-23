@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Ocean1 {
+
     @Autowired
     @Qualifier("island2")
     private Island2 island;
@@ -15,3 +16,5 @@ public class Ocean1 {
         return "на океане остров " + island.toString();
     }
 }
+
+
