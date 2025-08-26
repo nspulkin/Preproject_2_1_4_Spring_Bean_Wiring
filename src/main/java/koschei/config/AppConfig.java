@@ -1,6 +1,7 @@
 package koschei.config;
 
 import koschei.models.Island2;
+import koschei.models.Ocean1;
 import koschei.models.Wood3;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,5 +14,12 @@ public class AppConfig {
     @Bean
     public static Island2 getIsland(Wood3 wood) {
         return new Island2(wood);
+    }
+
+    @Bean
+    public static Ocean1 getOcean(Island2 island) {
+        Ocean1 ocean = new Ocean1();
+        ocean.setIsland(island);
+        return ocean;
     }
 }
